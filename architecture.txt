@@ -1,0 +1,85 @@
+Legends: 
+ >> (directory)
+ >  (file)
+
+
+ >> public
+    : all the files of css and js and img which will
+      be served to the browser will be transpiled with
+      the help of bundlers and other tools
+      Note* frameworks and libraries like react do this 
+            transpiling for us automatically.
+      Note* only files present in public folder will be listed in index.js
+            for browser.
+
+    >> public/css
+      : will have all the transpiled css/scss
+    
+    >> public/js
+      : will have all the transpiled js
+
+    >> public/img
+      : will have all the public assets
+
+ >> app
+    : all the dev(api) logic will live here like routes/api calls
+      in controllers and middlewares inside http folder
+      and backend models in models folder and other config 
+      Note* project follows MVC (model view controllers) architecture.       
+
+    >> app/http
+       : will have routes/api logic like api calls middlewares, etc
+
+       >> app/http/controllers
+          : will have all the routes/api endpoints
+
+       >> app/http/middlewares
+          : will have all the middlewares like express, error-handlers, auth
+
+    >> app/models
+       : will have all the models/schema for database
+
+    >> app/config
+       : will have all the configurations for the app/project like auth config,
+         etc
+
+ >> app/resources
+    : all the dev(client) uncompiled view of the app/project will live here like 
+      saas , unbundled js or unoptimized img (if exists) will be here.
+
+    >> app/resources/js
+       : will have all the client code of js
+         Note* the bundlers and other tools will compile and transpile
+               the client code into public folder to be used on browser.
+   
+    >> app/resources/scss
+       : will have all the client code of scss
+         Note* the bundlers and other tools will compile and transpile
+               the client code into public folder to be used on browser.
+
+    >> app/resources/views
+       : will have all the pages/templates here like cart, home, login, signup
+         admin-dashboard, basically all the pages.   
+
+ >> routes
+    : all the dev(client) routes/api request will fetch and statically 
+      provide html pages from here.
+
+    > routes/web.js
+      : will have all web routes
+    > routes/api.js
+      : will have all api routes
+
+ > server.js
+   : the entry point of server (app's backend)
+   
+     Note* server is the one which gives/renders html to browser when requested
+           also known as server-side-rendering. 
+           (frameworks like Next.js use this under the hood).
+   
+     Note* in express everything has to be told or registered to app from express
+           like ejs template , json data sharing, or any other middlewares ,
+           and views(our client side code) also.
+
+     Note* for every middlewares in express we use like (app.use(expressLayout))
+           and for every feature we need to set the key-value like (app.set('view engine', 'ejs)).
