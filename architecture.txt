@@ -1,7 +1,7 @@
 Legends: 
  >> (directory)
  >  (file)
-
+ #  (tools)
 
  >> public
     : all the files of css and js and img which will
@@ -83,3 +83,12 @@ Legends:
 
      Note* for every middlewares in express we use like (app.use(expressLayout))
            and for every feature we need to set the key-value like (app.set('view engine', 'ejs)).
+     
+     Note* MIME (text/html) - here express/server returns text/html by default so tell express to return 
+           type of css and js.
+            
+ # Laravel-mix 
+   : tool which helps to compile/transpile js , css (used in Laravel project but also as standalone)
+     under the hood uses webpack.
+     Note* for set up and installation use Laravel-mix.com/docs/installation
+ 
